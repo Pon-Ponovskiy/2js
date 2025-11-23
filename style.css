@@ -1,0 +1,165 @@
+@import url("normalize.css"); /* начало 5 шага */
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body{
+    background-color: #1d1d2a;
+    font-family: "Libertinus Mono", monospace;
+}
+html{
+    font-size: 16px;
+}/* конец 5 шага */
+
+.wrapper{  /*нашало 6 шага */
+    min-height: 100%;
+}
+.parallax{
+    min-height: 100vh;
+}
+.parallax__body{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}/* конец 6 шага */
+
+
+.parallax__content{/* начло7 шага */
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    color: #c6bebe;
+}
+h1::after{
+    content: "(Parallax)";
+    color: #424242;
+    opacity: 0.2;
+}
+/* конец 7 шага */
+
+.parallax__images{/*начало 8 шага*/
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+}
+.images__item{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}/*коноц 8 шага*/
+
+.images__clouds, .images__human, .images__mountains{/*нацало 9 шага*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}/*конец 9 шага*/
+
+.images__clouds{/*начало 10 шага*/
+    background-image: url("clouds.jpg");
+    top: 0;
+}
+.images__mountains{
+    background-image: url("mountains.png");
+    z-index: 2;
+    top: 15%;
+}
+.images__human{
+    background-image: url("human.png");
+    z-index: 3;
+    top: 45%;
+}/*конец 10 шага*/
+
+.content{
+    position: relative;
+    background-color: #1d1d2a;
+    z-index: 2;
+    color: whitesmoke;
+}
+.content::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    transform: translate(0,-100%);
+    background: linear-gradient(180deg, rgba(11,29,38,0) 0%, rgba(19,28,32,1) 100%);
+    pointer-events: none;
+}
+
+@media(max-aspect-ratio:3/2){
+    .images__human{
+        background-position: 20% top;
+    }
+}
+
+
+@media(min-width:320px){
+    ._container{
+        max-width: 20rem;
+        padding: 0.625rem;
+    }
+    .parallax__title{
+        font-size: 1.55rem;
+    }
+    .content::before{
+          height: 9.375rem;
+    }
+    .content__text{
+        font-size: 0.75em;
+        font-weight: 150%;
+    }
+    .content__title{
+        font-size: 1em;
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media(min-width:600px){
+    ._container{
+        max-width: 37.5rem;
+        padding: 1rem;
+    }
+    .parallax__title{
+        font-size: 2.5rem;
+    }
+    .content::before{
+          height: 14rem;
+    }
+    .content__text{
+        font-size: 0.975em;
+        font-weight: 150%;
+    }
+    .content__title{
+        font-size: 1.5em;
+        margin-bottom: 1.45rem;
+    }
+}
+@media(min-width:1024px){
+    ._container{
+        max-width: 62.5rem;
+        padding: 1.25rem;
+    }
+    .parallax__title{
+        font-size: 3.45rem;
+    }
+    .content::before{
+          height: 18.75rem;
+    }
+    .content__text{
+        font-size: 1em;
+        font-weight: 150%;
+    }
+    .content__title{
+        font-size: 1.875em;
+        margin-bottom: 1.875rem;
+    }
+}
